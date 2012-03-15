@@ -41,6 +41,7 @@ function af_get_error_messages() {
         3 => "O resumo precisa ter no máximo 350 caracteres.",
         4 => "A imagem destacada precisa ter no mínimo $min_width x $min_height.",
         5 => "O título que você escreveu só tem letras maiúsculas. Se isso for mesmo muito desejado, <em>embora não seja recomendável</em>, você pode clicar em <em>&laquo;Publicar&raquo;</em> novamente para ignorar esta mensagem."
+        6 => "O título que você escreveu tem mais de 100 caracteres. Se isso for mesmo muito desejado, <em>embora não seja recomendável</em>, você pode clicar em <em>&laquo;Publicar&raquo;</em> novamente para ignorar esta mensagem."
     );
 }
 
@@ -69,6 +70,9 @@ function af_can_publish_post($id) {
     }
     if (strtoupper($post->post_title) == $post->post_title) {
         $warning[] = 5;
+    }
+    if (strlen($post->post_title) > 100) {
+        $warning[] = 6;
     }
     if (count($error) != 0 || (count($warning) != 0 && $_POST["fuck"] != "you")) {
         $wpdb->query("UPDATE {$wpdb->posts} SET post_status = 'draft' WHERE ID = '{$post->ID}'");
