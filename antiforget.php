@@ -40,7 +40,7 @@ function af_get_error_messages() {
         2 => "Você precisa escrever um resumo para publicar.",
         3 => "O resumo precisa ter no máximo 350 caracteres.",
         4 => "A imagem destacada precisa ter no mínimo $min_width x $min_height.",
-        5 => "O título que você escreveu só tem letras maiúsculas. Se isso for mesmo muito desejado, <em>embora não seja recomendável</em>, você pode clicar em <em>&laquo;Publicar&raquo;</em> novamente para ignorar esta mensagem."
+        5 => "O título que você escreveu só tem letras maiúsculas. Se isso for mesmo muito desejado, <em>embora não seja recomendável</em>, você pode clicar em <em>&laquo;Publicar&raquo;</em> novamente para ignorar esta mensagem.",
         6 => "O título que você escreveu tem mais de 100 caracteres. Se isso for mesmo muito desejado, <em>embora não seja recomendável</em>, você pode clicar em <em>&laquo;Publicar&raquo;</em> novamente para ignorar esta mensagem."
     );
 }
