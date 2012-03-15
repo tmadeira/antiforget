@@ -56,7 +56,7 @@ function af_can_publish_post($id) {
     } else {
         $thumb_id = get_post_thumbnail_id($post->ID);
         list($min_width, $min_height) = af_get_minimum_thumbnail_size();
-        list($src, $width, $height) = wp_get_attachment_image_src($thumb_id);
+        list($src, $width, $height) = wp_get_attachment_image_src($thumb_id, 'post-thumbnail');
         if ($width < $min_width || $height < $min_height) {
             $error[] = 4;
         }
